@@ -23,7 +23,7 @@ WORKDIR ${BASEDIR}/images/debian/$DIST
 RUN wget -q $MIRROR/debian/dists/$DIST/main/installer-$ARCH/current/images/netboot/debian-installer/$ARCH/linux
 RUN wget -q $MIRROR/debian/dists/$DIST/main/installer-$ARCH/current/images/netboot/debian-installer/$ARCH/initrd.gz
 RUN wget -q $MIRROR/debian/dists/$DIST/main/installer-$ARCH/current/images/netboot/debian-installer/$ARCH/pxelinux.0
-RUN mkdir ${BASEDIR}/tftp/pxelinux.cfg
+RUN mkdir -p ${BASEDIR}/tftp/pxelinux.cfg
 
 ## nginx
 RUN apt-get install -y nginx
